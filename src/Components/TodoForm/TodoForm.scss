@@ -1,0 +1,111 @@
+@mixin center-content(){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin btn($color,$bgcolor){
+    padding:5px 10px;
+    height: 2em;
+    font-size: 1em;
+    color: $color;
+    font-weight: normal;
+    border-radius: 0.5em;
+    border: none;
+    background-color: $bgcolor;
+    cursor: pointer;
+}
+
+.container{
+    width: 100%;
+    min-height: 70vh;
+    @include center-content();
+
+    .content{
+        background-color: white;
+        width: 70%;
+        min-height: 65vh;
+        border-radius: 1em;
+        padding: 20px 20px;
+        flex-wrap: wrap;
+
+        .input{
+            display: flex;
+            justify-content: space-around;
+
+            input{
+                font-size: 1em;
+                color: black;
+                padding: 5px;
+                width:70%;
+                margin-right:0.5em;
+                border: none;
+                outline: none;
+                border-bottom: 1px solid black;
+                text-align: center;
+            }
+            button{
+                @include btn(white,hsla(237, 64%, 56%, 1) );
+            }
+        }
+        .todos{
+            padding: 1em 1em;
+        }
+    }
+}
+
+.NoTask{
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: greenyellow;
+    padding: 10px;
+    border-radius: 0.5em;
+}
+
+.taskShape{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px; 
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 5px 1em;
+    width: 100%;
+
+    .textRes{
+        width: 65%;
+        word-wrap: break-word;
+    }
+    .alignButtons{
+        display: flex;
+    }
+
+    > div ul{
+        margin-left:0;
+        padding-left: 20px;
+    }
+    .deleteButton{
+        @include btn(white,red );
+        // margin: 5px 10px 5px 0px;
+        margin-right: 10px;
+
+    }
+    
+    .editButton{
+        @extend .deleteButton;
+        background-color: hsla(237, 64%, 56%, 1);
+    }
+}
+
+.done{
+    margin-top: 5px;
+    margin-right: 10px;
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+.done2{
+    @extend .done;
+    background-color: salmon;
+}

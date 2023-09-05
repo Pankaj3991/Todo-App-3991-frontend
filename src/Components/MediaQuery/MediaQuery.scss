@@ -1,0 +1,32 @@
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+    .container .content{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .header{
+        font-size: 1.5em;
+    }
+    .container .content {
+        width: 90%;
+        .input input{
+            width: 50%;
+            margin-right: 0px;
+        }
+    }
+    .taskShape {
+        // align-items: center;
+        flex-direction:column ;
+        .textRes{
+            width: 100%;
+        }
+        .alignButtons{
+            margin-top: 1em;
+            align-self: center;
+        }
+    }
+}
+
+
+  
